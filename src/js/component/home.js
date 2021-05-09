@@ -4,6 +4,8 @@ import React, { useState } from "react";
 
 //create your first component
 export function Home() {
+	const [eliminar, setEliminar] = useState("");
+
 	const [lista, setLista] = useState([]);
 
 	const [tarea, setTarea] = useState("");
@@ -29,11 +31,13 @@ export function Home() {
 				onKeyPress={handleInput}
 				className="border-0 shadow col-12 rounded"
 			/>
+
 			<ul className="list-group shadow">
 				{lista.map((elemento, index, array) => {
 					return (
 						<li key={index} className="list-group-item">
 							{elemento.label}
+							<button className="fas fa-times"></button>
 						</li>
 					);
 				})}
